@@ -1,0 +1,5 @@
+FROM mysql:8.0
+
+COPY ./scripts/create.sql /docker-entrypoint-initdb.d/01-create.sql
+COPY ./scripts/creacionTablas.sql /docker-entrypoint-initdb.d/02-creacionTablas.sql
+COPY ./scripts/creacionRegistros.sql /docker-entrypoint-initdb.d/03-creacionRegistros.sql

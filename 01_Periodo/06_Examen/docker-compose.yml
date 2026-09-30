@@ -1,0 +1,16 @@
+services:
+  mysql_db:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: mysql_refugio
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: centro_rescate
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
